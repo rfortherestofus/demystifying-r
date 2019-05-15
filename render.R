@@ -13,3 +13,11 @@ render(input = "report.Rmd",
        clean = T)
 
 
+# Render report -----------------------------------------------------
+
+render(input = "slides.Rmd", 
+       # output_dir = here("slides"),
+       output_file = "demystifying-r-slides-azenet.html",
+       clean = T)
+
+
