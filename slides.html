@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Demystifying R:  A Guided Tour</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="David Keyes   R for the Rest of Us" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Demystifying R: <br>A Guided Tour
+### David Keyes <br> R for the Rest of Us
+
+---
+
+
+
+
+layout: true
+  
+&lt;div class="dk-footer"&gt;
+&lt;span&gt;
+&lt;a href="https://rfortherestofus.com/" target="_blank"&gt;R for the Rest of Us
+&lt;/a&gt;
+&lt;/span&gt;
+&lt;/div&gt; 
+
+---
+
+# Before We Start
+
+Please take the survey at https://rfortherestofus.com/presentation/azenet/
+
+![](images/survey.gif)
+
+---
+
+
+
+
+
+
+
+
+class: inverse, center, middle, dk-section-title 
+
+# What is R?
+
+
+---
+
+## Download and Install R
+
+The first thing you need to do is download the R software. Go to the [Comprehensive R Archive Network (aka “CRAN”) website](https://cran.cnr.berkeley.edu/) and download the software for your operating system (Windows, Mac, or Linux).
+
+![](images/download-r.png)
+
+
+---
+
+## RStudio
+
+--
+
+.center[
+![](images/engine-dashboard.png)
+
+.small[Courtesy [Modern Dive](http://moderndive.com/2-getting-started.html#what-are-r-and-rstudio)]
+]
+
+
+---
+
+## Download and Install RStudio
+
+Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstudio/download/#download). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
+
+![](images/download-rstudio.png)
+
+
+---
+class: inverse, center, middle, dk-section-title 
+
+# Packages
+
+---
+
+## Packages
+
+
+--
+
+.center[
+![](images/phone-apps.png)
+
+.small[Courtesy [Modern Dive](http://moderndive.com/2-getting-started.html#packages)]
+]
+
+---
+
+# Why Use R?
+
+--
+
+![](images/why-use-r.png)
+
+
+
+
+---
+
+class: inverse, center, middle, dk-section-title
+
+# How R Works
+
+---
+
+class: inverse, center, middle, dk-section-title
+
+## Data Analysis
+
+---
+
+### Import Data
+
+
+
+
+```r
+nhanes &lt;- read_csv("data/nhanes.csv")
+```
+
+--
+
+
+```
+## # A tibble: 10,000 x 22
+##       id survey_yr gender   age age_decade race1 education marital_status
+##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;         
+##  1 51624 2009_10   male      34 30-39      White High Sch… Married       
+##  2 51624 2009_10   male      34 30-39      White High Sch… Married       
+##  3 51624 2009_10   male      34 30-39      White High Sch… Married       
+##  4 51625 2009_10   male       4 0-9        Other &lt;NA&gt;      &lt;NA&gt;          
+##  5 51630 2009_10   female    49 40-49      White Some Col… LivePartner   
+##  6 51638 2009_10   male       9 0-9        White &lt;NA&gt;      &lt;NA&gt;          
+##  7 51646 2009_10   male       8 0-9        White &lt;NA&gt;      &lt;NA&gt;          
+##  8 51647 2009_10   female    45 40-49      White College … Married       
+##  9 51647 2009_10   female    45 40-49      White College … Married       
+## 10 51647 2009_10   female    45 40-49      White College … Married       
+## # … with 9,990 more rows, and 14 more variables: hh_income &lt;chr&gt;,
+## #   home_own &lt;chr&gt;, work &lt;chr&gt;, weight &lt;dbl&gt;, height &lt;dbl&gt;, bmi &lt;dbl&gt;,
+## #   health_gen &lt;chr&gt;, days_phys_hlth_bad &lt;dbl&gt;, days_ment_hlth_bad &lt;dbl&gt;,
+## #   sleep_hrs_night &lt;dbl&gt;, phys_active &lt;chr&gt;, phys_active_days &lt;dbl&gt;,
+## #   tv_hrs_day &lt;lgl&gt;, smoke_now &lt;chr&gt;
+```
+
+
+
+---
+
+### Data Analysis
+
+
+```r
+nhanes %&gt;% 
+  count(education)
+```
+
+--
+
+
+```
+## # A tibble: 6 x 2
+##   education          n
+##   &lt;chr&gt;          &lt;int&gt;
+## 1 &lt;NA&gt;            2779
+## 2 8th Grade        451
+## 3 9 - 11th Grade   888
+## 4 College Grad    2098
+## 5 High School     1517
+## 6 Some College    2267
+```
+
+---
+
+### Data Analysis
+
+
+```r
+physically_active_education &lt;- nhanes %&gt;% 
+  group_by(education) %&gt;% 
+  summarize(days_active = mean(phys_active_days, na.rm = TRUE)) %&gt;% 
+  mutate(days_active = round(days_active, 1)) %&gt;% 
+  drop_na(education)
+```
+
+--
+
+
+```
+## # A tibble: 5 x 2
+##   education      days_active
+##   &lt;chr&gt;                &lt;dbl&gt;
+## 1 8th Grade              3.8
+## 2 9 - 11th Grade         3.6
+## 3 College Grad           3.9
+## 4 High School            3.7
+## 5 Some College           3.5
+```
+
+
+---
+
+class: inverse, center, middle, dk-section-title
+
+## Data Visualization
+
+---
+
+
+class: center, middle
+
+![](images/bbc-plots.png)
+
+---
+
+class: center, middle
+
+![](images/ficb-map.png)
+
+---
+
+
+class: center, middle
+
+![](images/sat-math-ridgeline.png)
+
+
+---
+
+class: inverse, center, middle, dk-section-title
+
+## Reproducibility
+
+---
+
+### RMarkdown
+
+Go from data import to final report, all in one tool.
+
+---
+
+
+### RMarkdown
+
+Every RMarkdown document has the following:
+
+--
+
+1. **YAML** (one per document)
+
+--
+
+2. **Text** (repeated as many times as necessary)
+
+--
+
+3. **Code chunks** (repeated as many times as necessary)
+
+
+
+---
+
+### RMarkdown Overview
+
+![](images/rmarkdown-overview.png)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
