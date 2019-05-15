@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 ```{r}
-# Install packages
+# Load packages
 
 library(tidyverse)
 library(googlesheets)

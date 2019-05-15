@@ -3,7 +3,6 @@
 
 library(tidyverse)
 library(hrbrthemes)
-library(janitor)
 
 theme_set(theme_ipsum(base_family = "Karla",
                       axis_title_family = "Karla"))
@@ -22,7 +21,6 @@ nhanes %>%
 nhanes %>% 
   group_by(education) %>% 
   summarize(days_active = mean(phys_active_days, na.rm = TRUE)) %>% 
-  mutate(days_active = round(days_active, 1)) %>% 
   drop_na(education) 
 
 
@@ -31,7 +29,6 @@ nhanes %>%
 nhanes %>% 
   group_by(education) %>% 
   summarize(days_active = mean(phys_active_days, na.rm = TRUE)) %>% 
-  mutate(days_active = round(days_active, 1)) %>% 
   drop_na(education) %>% 
   ggplot(aes(education, days_active)) +
   geom_col() +

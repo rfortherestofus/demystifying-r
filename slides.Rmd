@@ -258,10 +258,19 @@ Every RMarkdown document has the following:
 
 ---
 
+class: inverse, center, middle, dk-section-title 
+
+# Questions?
+
+Please put them in the chat. 
+
+
+---
+
 # Learn More
 
 All materials are posted at https://rfortherestofus.com/presentation/azenet/
 
 Please email me with any questions: [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
 
-I have made a coupon code (AZENETMAY2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires May 31.
+I have made a coupon code (AZENETMAY2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires May 31, 2019.

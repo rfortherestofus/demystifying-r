@@ -13,7 +13,7 @@ render(input = "report.Rmd",
        clean = T)
 
 
-# Render report -----------------------------------------------------
+# Render slides -----------------------------------------------------
 
 render(input = "slides.Rmd", 
        # output_dir = here("slides"),
