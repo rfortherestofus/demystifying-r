@@ -15,9 +15,9 @@ render(input = "report.Rmd",
 
 # Render slides -----------------------------------------------------
 
-render(input = "slides.Rmd", 
-       # output_dir = here("slides"),
-       output_file = "demystifying-r-slides-azenet.html",
+render(input = here("slides", "slides.Rmd"), 
+       output_dir = here("slides"),
+       output_file = "slides-aea.html",
        clean = T)
 
 

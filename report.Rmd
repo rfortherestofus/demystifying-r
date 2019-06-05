@@ -2,7 +2,7 @@
 title: "Demystifying R Survey Report"
 output: 
     html_document:
-        css: style.css
+        css: slides/style.css
         toc: true
         toc_depth: 2
         toc_float: true
@@ -42,7 +42,9 @@ theme_set(theme_ipsum(base_family = "Karla",
 ```{r}
 # Download data
 
-gs_title("Demystifying R Survey Responses") %>%
+
+
+gs_url("https://docs.google.com/spreadsheets/d/1sbKCVr90FV8D5_DPohc_Fskim_N3f5CkxqE92fageBM/edit#gid=399967879") %>%
   gs_download(to = "data/survey-responses.csv",
               overwrite = TRUE)
 ```
