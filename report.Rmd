@@ -42,8 +42,8 @@ theme_set(theme_ipsum(base_family = "Karla",
 ```{r}
 # Download data
 
-gs_url("https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qEb9s/edit#gid=1882477504") %>%
-  gs_download(to = "data/survey-responses.csv",
+gs_title("Demystifying R Survey") %>%
+  gs_download(to = here::here("data", "survey-responses.csv"),
               overwrite = TRUE)
 ```
 
