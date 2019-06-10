@@ -1,15 +1,24 @@
 Timestamp,How familiar are you with R?,How interested are you in learning R?,What is the highest level of education you have completed?,What is your gender?,How old are you?,"What is the city, state, and country of your primary residence?"
-5/15/2019 21:04:40,1,5,Master's degree,Female,26,"Phoenix, AZ United States"
-5/15/2019 21:04:44,2,5,Master's degree,Female,33,"Phoenix, Arizona, United States"
-5/15/2019 21:04:50,3,5,Bachelor's degree,female,34,"Tucson, AZ USA"
-5/15/2019 21:05:08,3,4,Doctoral degree,Female,29,"Phoenix, AZ"
-5/15/2019 21:05:16,2,5,Master's degree,female,29,"phoenix, arizona united states"
-5/15/2019 21:05:23,3,5,Master's degree,Female,26,"Phoenix, Arizona United States"
-5/15/2019 21:05:26,2,4,Doctoral degree,Female,33,"Mesa, AZ United States"
-5/15/2019 21:05:33,2,4,Master's degree,female,31,"Tucson, AZ, USA"
-5/15/2019 21:05:33,2,3,Doctoral degree,female,58,"tucson, az"
-5/15/2019 21:05:39,2,3,Doctoral degree,female,56,Tucson
-5/15/2019 21:05:49,4,5,Doctoral degree,,30,"Phoenix, Arizona, United States"
-5/15/2019 21:06:17,4,5,Master's degree,Female,34,Tempe
-5/15/2019 21:07:47,3,5,Master's degree,Female,27,"Phoenix, AZ"
-5/15/2019 21:08:25,1,3,Master's degree,Female,36,"Avondale, Arizona United States"
+5/15/2019 10:21:17,5,5,Bachelor's degree,Boy,15,"Philadelphia, PA USA"
+5/15/2019 11:24:00,5,4,Bachelor's degree,Boy,12,"Philadelphia, PA"
+5/15/2019 11:24:25,5,5,Bachelor's degree,Boy,12,
+5/15/2019 11:24:44,4,5,,,,
+5/15/2019 11:58:56,4,5,Master's degree,Queer,48,"Philadelphia, PA"
+5/15/2019 14:04:40,1,5,Master's degree,Female,26,"Phoenix, AZ United States"
+5/15/2019 14:04:44,2,5,Master's degree,Female,33,"Phoenix, Arizona, United States"
+5/15/2019 14:04:50,3,5,Bachelor's degree,female,34,"Tucson, AZ USA"
+5/15/2019 14:05:08,3,4,Doctoral degree,Female,29,"Phoenix, AZ"
+5/15/2019 14:05:16,2,5,Master's degree,female,29,"phoenix, arizona united states"
+5/15/2019 14:05:23,3,5,Master's degree,Female,26,"Phoenix, Arizona United States"
+5/15/2019 14:05:26,2,4,Doctoral degree,Female,33,"Mesa, AZ United States"
+5/15/2019 14:05:33,2,4,Master's degree,female,31,"Tucson, AZ, USA"
+5/15/2019 14:05:33,2,3,Doctoral degree,female,58,"tucson, az"
+5/15/2019 14:05:39,2,3,Doctoral degree,female,56,Tucson
+5/15/2019 14:05:49,4,5,Doctoral degree,,30,"Phoenix, Arizona, United States"
+5/15/2019 14:06:17,4,5,Master's degree,Female,34,Tempe
+5/15/2019 14:07:47,3,5,Master's degree,Female,27,"Phoenix, AZ"
+5/15/2019 14:08:25,1,3,Master's degree,Female,36,"Avondale, Arizona United States"
+6/10/2019 10:25:47,1,3,,,,
+6/10/2019 10:32:44,2,,,,,
+6/10/2019 10:34:17,1,3,,,,
+6/10/2019 15:12:58,,,,,,"Portland, Oregon"

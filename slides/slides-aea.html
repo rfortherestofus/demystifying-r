@@ -32,9 +32,10 @@ layout: true
 
 # Before We Start
 
-Please take the survey at https://rfortherestofus.com/presentation/azenet/
+Please take the survey at https://rfortherestofus.com/aea/
 
 ![](images/survey.gif)
+
 
 ---
 
@@ -48,6 +49,10 @@ Please take the survey at https://rfortherestofus.com/presentation/azenet/
 class: inverse, center, middle, dk-section-title 
 
 # What is R?
+
+???
+
+Was all command line before, but with RStudio, tidyverse, etc it's much easier to start now
 
 
 ---
@@ -76,7 +81,7 @@ The first thing you need to do is download the R software. Go to the [Comprehens
 
 ## Download and Install RStudio
 
-Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstudio/download/#download). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
+Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
 
 ![](images/download-rstudio.png)
 
@@ -84,11 +89,11 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 ---
 class: inverse, center, middle, dk-section-title 
 
-# Packages
+## Packages
 
 ---
 
-## Packages
+### Packages
 
 
 --
@@ -101,114 +106,56 @@ class: inverse, center, middle, dk-section-title
 
 ---
 
+### Examples of Packages
+
+![](images/tidyverse-website.png)
+
+---
+
+### Examples of Packages
+
+
+![](images/gendercoder.png)
+
+---
+
+class: inverse, center, middle, dk-section-title
+
 # Why Use R?
 
---
+???
 
-![](images/why-use-r.png)
-
-
-
-
----
-
-class: inverse, center, middle, dk-section-title
-
-# How R Works
-
----
-
-class: inverse, center, middle, dk-section-title
-
-## Data Analysis
-
----
-
-### Import Data
-
-
-
-
-```r
-nhanes &lt;- read_csv("data/nhanes.csv")
-```
-
---
-
-
-```
-## # A tibble: 10,000 x 22
-##       id survey_yr gender   age age_decade race1 education marital_status
-##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;         
-##  1 51624 2009_10   male      34 30-39      White High Sch… Married       
-##  2 51624 2009_10   male      34 30-39      White High Sch… Married       
-##  3 51624 2009_10   male      34 30-39      White High Sch… Married       
-##  4 51625 2009_10   male       4 0-9        Other &lt;NA&gt;      &lt;NA&gt;          
-##  5 51630 2009_10   female    49 40-49      White Some Col… LivePartner   
-##  6 51638 2009_10   male       9 0-9        White &lt;NA&gt;      &lt;NA&gt;          
-##  7 51646 2009_10   male       8 0-9        White &lt;NA&gt;      &lt;NA&gt;          
-##  8 51647 2009_10   female    45 40-49      White College … Married       
-##  9 51647 2009_10   female    45 40-49      White College … Married       
-## 10 51647 2009_10   female    45 40-49      White College … Married       
-## # … with 9,990 more rows, and 14 more variables: hh_income &lt;chr&gt;,
-## #   home_own &lt;chr&gt;, work &lt;chr&gt;, weight &lt;dbl&gt;, height &lt;dbl&gt;, bmi &lt;dbl&gt;,
-## #   health_gen &lt;chr&gt;, days_phys_hlth_bad &lt;dbl&gt;, days_ment_hlth_bad &lt;dbl&gt;,
-## #   sleep_hrs_night &lt;dbl&gt;, phys_active &lt;chr&gt;, phys_active_days &lt;dbl&gt;,
-## #   tv_hrs_day &lt;lgl&gt;, smoke_now &lt;chr&gt;
-```
-
+- Many people are attracted to it because it's free
+- It can do what you already do AND it can do more
 
 
 ---
 
-### Data Analysis
+## Data Analysis in a Snap
+
+
+
+
 
 
 ```r
 nhanes %&gt;% 
-  count(education)
+  skim(weight)
 ```
 
 --
 
 
 ```
-## # A tibble: 6 x 2
-##   education          n
-##   &lt;chr&gt;          &lt;int&gt;
-## 1 &lt;NA&gt;            2779
-## 2 8th Grade        451
-## 3 9 - 11th Grade   888
-## 4 College Grad    2098
-## 5 High School     1517
-## 6 Some College    2267
-```
-
----
-
-### Data Analysis
-
-
-```r
-physically_active_education &lt;- nhanes %&gt;% 
-  group_by(education) %&gt;% 
-  summarize(days_active = mean(phys_active_days, na.rm = TRUE)) %&gt;% 
-  mutate(days_active = round(days_active, 1)) %&gt;% 
-  drop_na(education)
-```
-
---
-
-
-```
-## # A tibble: 5 x 2
-##   education      days_active
-##   &lt;chr&gt;                &lt;dbl&gt;
-## 1 8th Grade              3.8
-## 2 9 - 11th Grade         3.6
-## 3 College Grad           3.9
-## 4 High School            3.7
-## 5 Some College           3.5
+## Skim summary statistics
+##  n obs: 10000 
+##  n variables: 22 
+## 
+## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+##  variable missing complete     n  mean    sd  p0  p25  p50  p75  p100
+##    weight      78     9922 10000 70.98 29.13 2.8 56.1 72.7 88.9 230.7
+##      hist
+##  ▂▃▇▃▁▁▁▁
 ```
 
 
@@ -216,7 +163,11 @@ physically_active_education &lt;- nhanes %&gt;%
 
 class: inverse, center, middle, dk-section-title
 
-## Data Visualization
+## High-Quality Data Visualization
+
+???
+
+Used by journalists from BBC, FT, etcp
 
 ---
 
@@ -243,65 +194,85 @@ class: center, middle
 
 class: inverse, center, middle, dk-section-title
 
-## Reproducibility
+## Use a Single Tool From Data Import to Final Report
+
+
+---
+
+class: center, middle
+
+![](images/non-r-workflow.png)
+
+???
+
+Problems: 
+- What if data changes? 
+- What if you need to produce reports for 10 sites?
+- What if you need to redo report next year? 
 
 ---
 
 ### RMarkdown
 
-Go from data import to final report, all in one tool.
+![](images/rmarkdown-to-word.png)
 
----
+???
 
-
-### RMarkdown
-
-Every RMarkdown document has the following:
-
---
-
-1. **YAML** (one per document)
-
---
-
-2. **Text** (repeated as many times as necessary)
-
---
-
-3. **Code chunks** (repeated as many times as necessary)
-
+Combine text and code to produce reports
 
 
 ---
 
-### RMarkdown Overview
+### Provide Immediate Feedback
 
-![](images/rmarkdown-overview.png)
+--
+
+&lt;div class="dk-quote"&gt;
+I love this method mainly because all the work is done up front and then for every session the client has I only need to spend 15 minutes generating the report and sending it to them.
+&lt;/div&gt;
+
+[Dana Wanzer](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
 
 ---
 
-# The Best Reason to Learn R
+class: inverse, center, middle, dk-section-title
+
+## Unique Reporting Possibilities
+
+---
+
+class: center, middle
+
+![](images/early-childhood-map.gif)
+
+---
+
+class: inverse, center, middle, dk-section-title
+
+## R Familiarity Survey
+
+---
+
+## The Best Reason to Learn R
 
 ![](images/rstats-supportive-community.gif)
 
----
 
-class: inverse, center, middle, dk-section-title 
+---
 
 # Questions?
 
-Please put them in the chat. 
-
+![](images/qa-link.gif)
 
 ---
 
-# Learn More
+# Start Your R Journey
 
-All materials are posted at https://rfortherestofus.com/presentation/azenet/
+To join the Q+A and to get all materials from this webinar, please visit https://rfortherestofus.com/aea/
 
-Please email me with any questions: [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
+Please email me at any point with questions: [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
 
-I have made a coupon code (AZENETMAY2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires May 31, 2019.
+I have made a coupon code (AEAJUNE2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires June 30, 2019.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
