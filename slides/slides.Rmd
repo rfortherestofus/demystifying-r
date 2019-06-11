@@ -23,6 +23,7 @@ knitr::opts_chunk$set(eval = TRUE,
 library(tidyverse)
 library(here)
 library(skimr)
+library(fontawesome)
 
 
 ```
@@ -44,11 +45,26 @@ Please take the survey at https://rfortherestofus.com/aea/
 
 ![](images/survey.gif)
 
+??? 
+
+- All materials, including slides, are at that location
+
 
 ---
 
 
+class: inverse, center, middle, dk-section-title 
 
+# Who am I?
+
+???
+
+- Not a hardcore quant: anthro PhD
+- Starting using R when I was consulting so I could have a free option to replace Excel, SPSS, etc. Realized R was much more than that.
+- Use R for descriptive stats, data visualization, creative reporting
+- Realized the power of R and realized people are scared of it. Started RRU to offer training through online courses, training orgs, workshops, etc to help the rest of us learn R.
+
+---
 
 
 
@@ -135,6 +151,7 @@ class: inverse, center, middle, dk-section-title
 
 - Many people are attracted to it because it's free
 - It can do what you already do AND it can do more
+- I'll provide three reasons to use R today
 
 
 ---
@@ -168,7 +185,7 @@ class: inverse, center, middle, dk-section-title
 
 ???
 
-Used by journalists from BBC, FT, etcp
+Used by journalists from BBC, FT, etc
 
 ---
 
@@ -181,7 +198,7 @@ class: center, middle
 
 class: center, middle
 
-![](images/ficb-map.png)
+![](images/obtn-sample.png)
 
 ---
 
@@ -189,6 +206,18 @@ class: center, middle
 class: center, middle
 
 ![](images/sat-math-ridgeline.png)
+
+---
+
+class: inverse, center, middle, dk-section-title
+
+## Unique Reporting Possibilities
+
+---
+
+class: center, middle
+
+![](images/early-childhood-map.gif)
 
 
 ---
@@ -224,29 +253,18 @@ Combine text and code to produce reports
 
 ---
 
-### Provide Immediate Feedback
+### Give Immediate Feedback
 
 --
 
 <div class="dk-quote">
-I love this method mainly because all the work is done up front and then for every session the client has I only need to spend 15 minutes generating the report and sending it to them.
+[A]ll the work is done up front and then for every session ... <b>I only need to spend 15 minutes generating the report and sending it to them</b>.
 </div>
 
-[Dana Wanzer](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
+[Using R for Immediate Reporting in Evaluation by Dana Wanzer](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
 
 ---
 
-class: inverse, center, middle, dk-section-title
-
-## Unique Reporting Possibilities
-
----
-
-class: center, middle
-
-![](images/early-childhood-map.gif)
-
----
 
 class: inverse, center, middle, dk-section-title
 
@@ -255,6 +273,8 @@ class: inverse, center, middle, dk-section-title
 ---
 
 ## The Best Reason to Learn R
+
+--
 
 ![](images/rstats-supportive-community.gif)
 
@@ -271,6 +291,10 @@ class: inverse, center, middle, dk-section-title
 
 To join the Q+A and to get all materials from this webinar, please visit https://rfortherestofus.com/aea/
 
+--
+
 Please email me at any point with questions: [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
 
-I have made a coupon code (AEAJUNE2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires June 30, 2019.
+--
+
+I have created a coupon code (AEAJUNE2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires June 30, 2019.
