@@ -58,7 +58,7 @@ survey_responses_today <- read_csv("data/survey-responses.csv") %>%
   mutate(timestamp = mdy_hms(timestamp)) %>%
   mutate(timestamp = as_date(timestamp)) %>%
   # Filter to only keep responses from today
-  filter(timestamp != as_date(now()))
+  filter(timestamp == as_date(now()))
 ```
 
 # About our Respondents
@@ -322,7 +322,7 @@ ggplot(r_interest_by_ed_and_age,
   coord_flip() +
   scale_y_continuous(limits = c(0, 5),
                      breaks = seq(0, 5, by = 1)) +
-  scale_fill_manual(values = c("#6CABDD", "#FF7400", "#FFC659")) +
+  scale_fill_manual(values = c("#6CABDD", "#FF7400", "#FFC659", "red")) +
   labs(title = "Interest in Learning R by\nEducation Level and Age",
        x = NULL,
        y = NULL) +

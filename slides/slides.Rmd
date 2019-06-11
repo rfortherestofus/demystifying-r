@@ -45,9 +45,10 @@ Please take the survey at https://rfortherestofus.com/aea/
 
 ![](images/survey.gif)
 
-??? 
+???
 
 - All materials, including slides, are at that location
+- Not going to actually show you how to use R (but I have a free course that does)
 
 
 ---
@@ -289,12 +290,16 @@ class: inverse, center, middle, dk-section-title
 
 # Start Your R Journey
 
-To join the Q+A and to get all materials from this webinar, please visit https://rfortherestofus.com/aea/
+1. To join the Q+A and to get all materials from this webinar, please visit https://rfortherestofus.com/aea/
 
 --
 
-Please email me at any point with questions: [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
+1. Visit https://rfortherestofus.com/workshops/ to vote for where I should take the R for the Rest of Us roadshow this fall.
 
 --
 
-I have created a coupon code (AEAJUNE2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires June 30, 2019.
+1. I have created a coupon code (AEAJUNE2019) that will give you $50 off the just released [Fundamentals of R course](https://rfortherestofus.com/courses/fundamentals/). It expires June 30, 2019.
+
+--
+
+1. Please email me at any point with questions: [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
