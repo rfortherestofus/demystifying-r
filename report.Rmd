@@ -54,6 +54,8 @@ gs_title("Demystifying R Survey") %>%
 survey_responses_today <- read_csv("data/survey-responses.csv") %>% 
   # Make the variable names easy to work with
   clean_names() %>% 
+  # Make sure the how_old_are_you variable is numeric
+  mutate(how_old_are_you = parse_number(how_old_are_you)) %>% 
   # Convert the timestamp variable into something easier to work with
   mutate(timestamp = mdy_hms(timestamp)) %>%
   mutate(timestamp = as_date(timestamp)) %>%
@@ -185,7 +187,7 @@ leaflet(respondent_locations) %>%
                    stroke = FALSE, 
                    fillOpacity = 0.7,
                    popup = ~what_is_the_city_state_and_country_of_your_primary_residence,
-                   clusterOptions = markerClusterOptions())
+                   clusterOptions = markerClusterOptions(showCoverageOnHover = FALSE))
 
 ```
 
