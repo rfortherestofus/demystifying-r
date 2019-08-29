@@ -24,6 +24,8 @@ library(tidyverse)
 library(here)
 library(skimr)
 library(fontawesome)
+library(kableExtra)
+library(janitor)
 
 
 ```
@@ -41,7 +43,7 @@ layout: true
 
 # Before We Start
 
-Please take the survey at https://rfortherestofus.com/presentation/bay-area/
+Please take the survey at https://rfortherestofus.com/survey/
 
 ![](images/survey-screenshot.gif)
 
@@ -49,6 +51,7 @@ Please take the survey at https://rfortherestofus.com/presentation/bay-area/
 
 ???
 
+- https://forms.gle/1vzs2FaFjuBrv1Yy6
 - All materials, including slides, are at that location
 - Not going to actually show you how to use R (but I have a free course that does)
 
@@ -57,7 +60,7 @@ Please take the survey at https://rfortherestofus.com/presentation/bay-area/
 
 # Logistics
 
-Everything will be posted at https://rfortherestofus.com/presentation/bay-area/
+Everything will be posted at https://rfortherestofus.com/presentation/sea/
 
 --
 
@@ -84,13 +87,15 @@ class: inverse, center, middle, dk-section-title
 
 ---
 
+class: inverse, center, middle, dk-section-title 
 
+# Getting Started
 
-
+---
 
 class: inverse, center, middle, dk-section-title 
 
-# What is R?
+## What is R?
 
 ???
 
@@ -99,7 +104,7 @@ Was all command line before, but with RStudio, tidyverse, etc it's much easier t
 
 ---
 
-## Download and Install R
+### Download and Install R
 
 The first thing you need to do is download the R software. Go to the [Comprehensive R Archive Network (aka “CRAN”) website](https://cran.cnr.berkeley.edu/) and download the software for your operating system (Windows, Mac, or Linux).
 
@@ -107,13 +112,13 @@ The first thing you need to do is download the R software. Go to the [Comprehens
 
 ---
 
-## R
+### R
 
 ![](images/r-console.png)
 
 ---
 
-## RStudio
+### RStudio
 
 --
 
@@ -126,7 +131,7 @@ The first thing you need to do is download the R software. Go to the [Comprehens
 
 ---
 
-## Download and Install RStudio
+### Download and Install RStudio
 
 Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
 
@@ -134,7 +139,7 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 
 ---
 
-## RStudio
+### RStudio
 
 ![](images/rstudio-screenshot.png)
 
@@ -195,14 +200,26 @@ nhanes <- read_csv(here::here("data", "nhanes.csv"))
 
 ```{r eval = FALSE}
 nhanes %>% 
-  skim(weight)
+  mutate(height_inches = height / 2.54) %>% 
+  group_by(gender) %>% 
+  summarize(mean_height = mean(height_inches, na.rm = TRUE)) %>% 
+  mutate(mean_height = round_half_up(mean_height, 1)) %>% 
+  mutate(gender = str_to_title(gender)) %>% 
+  set_names(c("Gender", "Average Height")) 
 ```
 
 --
 
 ```{r echo = FALSE}
 nhanes %>% 
-  skim(weight)
+  mutate(height_inches = height / 2.54) %>% 
+  group_by(gender) %>% 
+  summarize(mean_height = mean(height_inches, na.rm = TRUE)) %>% 
+  mutate(mean_height = round_half_up(mean_height, 1)) %>% 
+  mutate(gender = str_to_title(gender)) %>% 
+  set_names(c("Gender", "Average Height")) %>% 
+  kableExtra::kable() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 
@@ -253,7 +270,7 @@ class: center, middle
 
 class: inverse, center, middle, dk-section-title
 
-## Use a Single Tool From Data Import to Final Report
+## R's Killer Feature: RMarkdown
 
 
 ---
@@ -282,9 +299,7 @@ Combine text and code to produce reports
 
 ---
 
-### Give Immediate Feedback
-
---
+class: center, middle
 
 <div class="dk-quote">
 [A]ll the work is done up front and then for every session ... <b>I only need to spend 15 minutes generating the report and sending it to them</b>.
@@ -326,22 +341,19 @@ class: inverse, center, middle, dk-section-title
 
 ## Materials
 
-All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/bay-area/
+All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/sea/
 
 ---
 
-![](images/bay-area-workshop.png)
+class: center, middle
 
+![](images/seattle-workshop-poster.png)
+
+???
+
+Register before September 4 for early bird pricing
 ---
 
-## Bay Area Workshop
-
-### `r fa("dollar-sign", fill = "#FF7400")` Use ROADSHOWWEBINAR2019 for $25 off
-
-
-### `r fa("kiwi-bird", fill = "#FF7400")` Register before August 27 for early bird pricing
-
----
 
 ## Online Courses
 
@@ -360,7 +372,7 @@ class: middle
 <br><br>
 #### `r fa("envelope", fill = "#FF7400")`  [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
 
-#### `r fa("twitter", fill = "#FF7400")`  [@dgkeyes](twitter.com/dgkeyes)
+#### `r fa("twitter", fill = "#FF7400")`  [dgkeyes](twitter.com/dgkeyes)
 
-#### `r fa("twitter", fill = "#FF7400")`  [@rfortherest](twitter.com/rfortherest)
+#### `r fa("twitter", fill = "#FF7400")`  [rfortherest](twitter.com/rfortherest)
 ]

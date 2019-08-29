@@ -21,7 +21,7 @@ render(input = "report.Rmd",
 
 render(input = here::here("slides", "slides.Rmd"), 
        output_dir = here::here("slides"),
-       output_file = "slides-bay-area-2019.html",
+       output_file = "slides-seattle-2019.html",
        clean = T)
 
 # file_delete(here::here("slides", "slides.html"))

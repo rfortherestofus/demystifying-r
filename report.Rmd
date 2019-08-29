@@ -205,17 +205,6 @@ survey_responses_today %>%
   set_names("Gender (Original Response)") 
 ```
 
-<!-- The table below shows a summary of all responses. -->
-
-
-<!-- ```{r} -->
-<!-- survey_responses_today %>%  -->
-<!--   drop_na(what_is_your_gender) %>%  -->
-<!--   select(what_is_your_gender) %>%  -->
-<!--   mutate(gender_recoded = recode_gender(what_is_your_gender)) %>%  -->
-<!--   count(what_is_your_gender) %>%  -->
-<!--   set_names("Gender (Original Response)", "Number of Responses")  -->
-<!-- ``` -->
 
 We then used the [gendercodeR package](https://github.com/ropenscilabs/gendercoder) to recode responses. The table below shows the original responses and the recoded responses.
 
