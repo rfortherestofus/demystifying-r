@@ -89,7 +89,7 @@ class: inverse, center, middle, dk-section-title
 
 class: inverse, center, middle, dk-section-title 
 
-# Getting Started
+# Getting Started with R
 
 ---
 
