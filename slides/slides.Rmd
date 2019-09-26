@@ -3,7 +3,7 @@ title: "Demystifying R: <br>A Guided Tour"
 author: "David Keyes <br> R for the Rest of Us"
 output:
   xaringan::moon_reader:
-    # df_print: paged
+    df_print: kable
     css: ["style.css", "default"]
     lib_dir: libs
     nature:
@@ -60,7 +60,7 @@ Please take the survey at https://rfortherestofus.com/survey/
 
 # Logistics
 
-Everything will be posted at https://rfortherestofus.com/presentation/sea/
+Everything will be posted at https://rfortherestofus.com/presentation/dc/
 
 --
 
@@ -200,26 +200,18 @@ nhanes <- read_csv(here::here("data", "nhanes.csv"))
 
 ```{r eval = FALSE}
 nhanes %>% 
-  mutate(height_inches = height / 2.54) %>% 
   group_by(gender) %>% 
-  summarize(mean_height = mean(height_inches, na.rm = TRUE)) %>% 
-  mutate(mean_height = round_half_up(mean_height, 1)) %>% 
-  mutate(gender = str_to_title(gender)) %>% 
-  set_names(c("Gender", "Average Height")) 
+  drop_na(height) %>% 
+  summarize(mean_height = mean(height)) 
 ```
 
 --
 
 ```{r echo = FALSE}
 nhanes %>% 
-  mutate(height_inches = height / 2.54) %>% 
   group_by(gender) %>% 
-  summarize(mean_height = mean(height_inches, na.rm = TRUE)) %>% 
-  mutate(mean_height = round_half_up(mean_height, 1)) %>% 
-  mutate(gender = str_to_title(gender)) %>% 
-  set_names(c("Gender", "Average Height")) %>% 
-  kableExtra::kable() %>% 
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  drop_na(height) %>% 
+  summarize(mean_height = mean(height)) 
 ```
 
 
@@ -341,17 +333,18 @@ class: inverse, center, middle, dk-section-title
 
 ## Materials
 
-All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/sea/
+All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/dc/
 
 ---
 
 class: center, middle
 
-![](images/seattle-workshop-poster.png)
+![](images/dc-workshop-poster.png)
 
 ???
 
-Register before September 4 for early bird pricing
+Register before October 1 for early bird pricing
+AEA workshop sold out
 ---
 
 
