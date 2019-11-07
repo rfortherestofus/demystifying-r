@@ -60,7 +60,7 @@ Please take the survey at https://rfortherestofus.com/survey/
 
 # Logistics
 
-Everything will be posted at https://rfortherestofus.com/presentation/dc/
+Everything will be posted at https://rfortherestofus.com/presentation/vancouver/
 
 --
 
@@ -196,6 +196,16 @@ class: inverse, center, middle, dk-section-title
 nhanes <- read_csv(here::here("data", "nhanes.csv"))
 ```
 
+```{r echo = FALSE}
+nhanes %>% 
+  head(10) %>% 
+  select(gender, education, marital_status, height) %>% 
+  rmarkdown::paged_table()
+```
+
+---
+
+## Data Analysis in a Snap
 
 
 ```{r eval = FALSE}
@@ -213,7 +223,6 @@ nhanes %>%
   drop_na(height) %>% 
   summarize(mean_height = mean(height)) 
 ```
-
 
 ---
 
@@ -333,18 +342,25 @@ class: inverse, center, middle, dk-section-title
 
 ## Materials
 
-All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/dc/
+All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/vancouver/
 
 ---
 
 class: center, middle
 
-![](images/dc-workshop-poster.png)
+![](images/vancouver-workshop-poster.png)
 
 ???
 
-Register before October 1 for early bird pricing
+Register before November 13 for early bird pricing
 AEA workshop sold out
+
+---
+
+class: center, middle
+
+![](images/joe-wertz-tweet.png)
+
 ---
 
 

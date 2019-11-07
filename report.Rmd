@@ -11,9 +11,9 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
+                      include = TRUE,
                       warning = FALSE,
-                      message = FALSE,
-                      fig.height = 3)
+                      message = FALSE)
 ```
 
 ```{r}
