@@ -60,9 +60,10 @@ Please take the survey at https://rfortherestofus.com/survey/
 
 # Logistics
 
-Everything will be posted at https://rfortherestofus.com/presentation/vancouver/
+Everything will be posted at https://rfor.us/demystifying-feb-2021
 
 --
+
 
 If you have any questions, please put them in the chat (I'll stop if necessary)
 
@@ -340,42 +341,19 @@ class: inverse, center, middle, dk-section-title
 ---
 
 
-## Materials
+## R in 3 Months (rfor.us/3months)
 
-All **materials** from this webinar will be posted at https://rfortherestofus.com/presentation/vancouver/
+![](images/r-in-3-website.gif)
+
+
 
 ---
 
-class: center, middle
-
-![](images/vancouver-workshop-poster.png)
-
-???
-
-Register before November 13 for early bird pricing
-AEA workshop sold out
-
----
-
-class: center, middle
-
-![](images/joe-wertz-tweet.png)
-
----
-
-
-## Online Courses
-
-
-
-![](images/getting-started-fundamentals.png)
-
----
 
 class: middle
 
 .pull-left[
-![](images/dk-oval.jpg)
+![](images/dk-headshot-round.jpg)
 ]
 .pull-right[
 <br><br>

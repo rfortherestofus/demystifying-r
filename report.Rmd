@@ -20,13 +20,13 @@ knitr::opts_chunk$set(echo = FALSE,
 # Load packages
 
 library(tidyverse)
-library(googlesheets)
+library(googlesheets4)
 library(janitor)
 library(lubridate)
 library(tigris)
 library(hrbrthemes)
 library(gendercodeR)
-library(ggmap)
+library(tidygeocoder)
 library(leaflet)
 library(scales)
 ```
@@ -34,31 +34,21 @@ library(scales)
 ```{r}
 # Set plotting default theme
 
-theme_set(theme_ipsum(base_family = "Karla",
-                      axis_title_family = "Karla"))
+theme_set(theme_ipsum(base_family = "Inter",
+                      axis_title_family = "Inter"))
 ```
 
-
-```{r}
-# Download data
-
-gs_title("Demystifying R Survey") %>%
-  gs_download(to = here::here("data", "survey-responses.csv"),
-              overwrite = TRUE)
-```
 
 
 ```{r}
 # Import our data
 
-survey_responses_today <- read_csv("data/survey-responses.csv") %>% 
+survey_responses_today <- read_sheet("https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qEb9s/edit#gid=1882477504") %>% 
   # Make the variable names easy to work with
   clean_names() %>% 
-  # Make sure the how_old_are_you variable is numeric
-  mutate(how_old_are_you = parse_number(how_old_are_you)) %>% 
   # Convert the timestamp variable into something easier to work with
   mutate(timestamp = mdy_hms(timestamp)) %>%
-  mutate(timestamp = as_date(timestamp)) %>%
+  mutate(timestamp = as_date(timestamp)) %>% 
   # Filter to only keep responses from today
   filter(timestamp == as_date(now()))
 ```
@@ -95,11 +85,13 @@ mean_age <- survey_responses_today %>%
   mutate(mean_age = round_half_up(mean_age, 1)) %>% 
   pull(mean_age)
 
-max_age <- max(survey_responses_today$how_old_are_you,
-               na.rm = TRUE)
+max_age <- survey_responses_today %>% 
+  summarize(age = max(how_old_are_you, na.rm = TRUE)) %>% 
+  pull(age)
 
-min_age <- min(survey_responses_today$how_old_are_you,
-               na.rm = TRUE)
+min_age <- survey_responses_today %>% 
+  summarize(age = min(how_old_are_you, na.rm = TRUE)) %>% 
+  pull(age)
 ```
 
 Respondents listed their age. The youngest respondent was `r min_age` years old and the oldest respondent was `r max_age`. The mean age was `r mean_age`.
@@ -177,12 +169,13 @@ Respondents listed the location of their primary residence. The map below shows 
 ```{r fig.height=6}
 respondent_locations <- survey_responses_today %>% 
   drop_na(what_is_the_city_state_and_country_of_your_primary_residence) %>% 
-  mutate_geocode(what_is_the_city_state_and_country_of_your_primary_residence) %>% 
-  select(what_is_the_city_state_and_country_of_your_primary_residence, lon, lat)
+  geocode(address = what_is_the_city_state_and_country_of_your_primary_residence,
+                        method = "osm") %>% 
+  select(what_is_the_city_state_and_country_of_your_primary_residence, long, lat)
 
 leaflet(respondent_locations) %>% 
   addProviderTiles(providers$CartoDB.Positron) %>% 
-  addCircleMarkers(~lon, ~lat,
+  addCircleMarkers(~long, ~lat,
                    color = "#FF7400",
                    stroke = FALSE, 
                    fillOpacity = 0.7,
@@ -216,7 +209,6 @@ survey_responses_today %>%
   mutate(gender_recoded = str_to_title(gender_recoded)) %>% 
   replace_na(list(gender_recoded = "Unable to recode")) %>% 
   set_names("Original Responses", "Recoded Gender") 
-
 ```
 
 We can then summarize the recoded responses, which we do in the following table.

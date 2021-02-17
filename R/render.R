@@ -18,13 +18,13 @@ render(input = "report.Rmd",
 
 render(input = here::here("slides", "slides.Rmd"), 
        output_dir = here::here("slides"),
-       output_file = "slides-vancouver-2019.html",
+       output_file = "slides-demystifying-r-feb-2021.html",
        clean = T)
 
 # file_delete(here::here("slides", "slides.html"))
 
 # Convert to PDF ----------------------------------------------------------
 
-chrome_print(here::here("slides", "slides-vancouver-2019.html"), 
-             here::here("slides", "slides-vancouver-2019.pdf"))
+chrome_print(here::here("slides", "slides-demystifying-r-feb-2021.html"), 
+             here::here("slides", "slides-demystifying-r-feb-2021.pdf"))
 
