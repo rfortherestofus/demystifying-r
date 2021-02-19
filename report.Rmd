@@ -40,17 +40,17 @@ theme_set(theme_ipsum(base_family = "Inter",
 
 
 
+
 ```{r}
 # Import our data
-
 survey_responses_today <- read_sheet("https://docs.google.com/spreadsheets/d/1lTjv7EYyGPKzjekBJ29xRqCUxhrMT0nuO4gsW6qEb9s/edit#gid=1882477504") %>% 
   # Make the variable names easy to work with
   clean_names() %>% 
-  # Convert the timestamp variable into something easier to work with
-  mutate(timestamp = mdy_hms(timestamp)) %>%
-  mutate(timestamp = as_date(timestamp)) %>% 
+  # Convert the timestamp into a date
+  mutate(timestamp = as.Date(timestamp)) %>% 
   # Filter to only keep responses from today
   filter(timestamp == as_date(now()))
+  
 ```
 
 # About our Respondents
@@ -96,7 +96,7 @@ min_age <- survey_responses_today %>%
 
 Respondents listed their age. The youngest respondent was `r min_age` years old and the oldest respondent was `r max_age`. The mean age was `r mean_age`.
 
-The graph belows shows the age of respondents broken into three groups.
+The graphs below shows the age of respondents broken into three groups.
 
 ```{r}
 age_categorized <- survey_responses_today %>% 
