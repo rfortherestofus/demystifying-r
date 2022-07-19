@@ -25,11 +25,19 @@ library(janitor)
 library(lubridate)
 library(tigris)
 library(hrbrthemes)
-library(gendercodeR)
+library(gendercoder)
 library(tidygeocoder)
 library(leaflet)
 library(scales)
 ```
+
+
+```{css}
+body {
+font-size: 18px;
+}
+```
+
 
 ```{r}
 # Set plotting default theme
@@ -199,7 +207,7 @@ survey_responses_today %>%
 ```
 
 
-We then used the [gendercodeR package](https://github.com/ropenscilabs/gendercoder) to recode responses. The table below shows the original responses and the recoded responses.
+We then used the [gendercoder package](https://github.com/ropenscilabs/gendercoder) to recode responses. The table below shows the original responses and the recoded responses.
 
 ```{r}
 survey_responses_today %>% 

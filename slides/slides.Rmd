@@ -26,20 +26,8 @@ library(skimr)
 library(fontawesome)
 library(kableExtra)
 library(janitor)
-
-
 ```
 
-layout: true
-  
-<div class="dk-footer">
-<span>
-<a href="https://rfortherestofus.com/" target="_blank">R for the Rest of Us
-</a>
-</span>
-</div> 
-
----
 
 # Before We Start
 
@@ -60,10 +48,9 @@ Please take the survey at https://rfortherestofus.com/survey/
 
 # Logistics
 
-Everything will be posted at https://rfor.us/demystifying-feb-2021
+Video recording, slides, and report will be posted on the Indiana Evaluation Assocation website
 
 --
-
 
 If you have any questions, please put them in the chat (I'll stop if necessary)
 
@@ -75,7 +62,7 @@ There will also be time for Q&A at the end
 ---
 
 
-class: inverse, center, middle, dk-section-title 
+class: inverse, center, middle 
 
 # Who Am I?
 
@@ -88,15 +75,9 @@ class: inverse, center, middle, dk-section-title
 
 ---
 
-class: inverse, center, middle, dk-section-title 
+class: inverse, center, middle 
 
-# Getting Started with R
-
----
-
-class: inverse, center, middle, dk-section-title 
-
-## What is R?
+# What is R?
 
 ???
 
@@ -146,9 +127,9 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 
 
 ---
-class: inverse, center, middle, dk-section-title 
+class: inverse, center, middle
 
-## Packages
+# Packages
 
 ---
 
@@ -178,7 +159,7 @@ class: inverse, center, middle, dk-section-title
 
 ---
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
 # Why Use R?
 
@@ -227,13 +208,16 @@ nhanes %>%
 
 ---
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
-## High-Quality Data Visualization
+# High-Quality Data Visualization
 
 ???
 
 Used by journalists from BBC, FT, etc
+
+
+
 
 ---
 
@@ -246,33 +230,38 @@ class: center, middle
 
 class: center, middle
 
-![](images/obtn-sample.png)
+![](images/obtn-sample-page.png)
 
 ---
 
 
 class: center, middle
 
-![](images/sat-math-ridgeline.png)
+![](images/psc-sample.png)
+---
+
+class: center, middle
+
+[![](images/qz-ggplot-article.png)](https://qz.com/1007328/all-hail-ggplot2-the-code-powering-all-those-excellent-charts-is-10-years-old/)
 
 ---
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
-## Unique Reporting Possibilities
+# Unique Reporting Possibilities
 
 ---
 
 class: center, middle
 
-![](images/early-childhood-map.gif)
+[![](images/apimap.png)](https://foodmap.apicouncil.org/)
 
 
 ---
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
-## R's Killer Feature: RMarkdown
+# R's Killer Feature: RMarkdown
 
 
 ---
@@ -303,22 +292,28 @@ Combine text and code to produce reports
 
 class: center, middle
 
-<div class="dk-quote">
-[A]ll the work is done up front and then for every session ... <b>I only need to spend 15 minutes generating the report and sending it to them</b>.
-</div>
+
+> [A]ll the work is done up front and then for every session ... <b>I only need to spend 15 minutes generating the report and sending it to them</b>.
 
 [Using R for Immediate Reporting in Evaluation by Dana Wanzer](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
 
 ---
 
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
-## R Familiarity Survey
+# R Familiarity Survey
 
 ---
 
-## The Best Reason to Learn R
+class: inverse, center, middle
+
+# Parameterized Reporting
+
+
+---
+
+# The Best Reason to Learn R
 
 --
 
@@ -327,16 +322,22 @@ class: inverse, center, middle, dk-section-title
 
 ---
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
 # Questions?
 
 
 ---
 
-class: inverse, center, middle, dk-section-title
+class: inverse, center, middle
 
 # Start Your R Journey
+
+---
+
+# Getting Started with R
+
+[![](images/getting-started.png)](https://rfortherestofus.com/courses/getting-started/)
 
 ---
 
@@ -356,7 +357,7 @@ class: middle
 ![](images/dk-headshot-round.jpg)
 ]
 .pull-right[
-<br><br>
+<br><br><br><br><br><br>
 #### `r fa("envelope", fill = "#FF7400")`  [david@rfortherestofus.com](mailto:david@rfortherestofus.com) 
 
 #### `r fa("twitter", fill = "#FF7400")`  [dgkeyes](twitter.com/dgkeyes)

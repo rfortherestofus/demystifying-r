@@ -10,7 +10,7 @@ library(fs)
 render(input = "report.Rmd", 
        output_dir = here::here("reports"),
        output_file = paste0("report-", now(), ".html"),
-       clean = T)
+       clean = TRUE)
 
 # file_delete(here::here("report.html"))
 
