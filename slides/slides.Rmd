@@ -1,5 +1,5 @@
 ---
-title: "Demystifying R: <br>A Guided Tour"
+title: "Demystifying R: <br>A Guided Tour Test"
 author: "David Keyes <br> R for the Rest of Us"
 output:
   xaringan::moon_reader:

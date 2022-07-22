@@ -80,7 +80,7 @@ today_year <- year(now()) %>%
 today_pretty <- str_glue("{today_month} {today_day}, {today_year}")
 ```
 
-We did a survey on `r today_pretty`. We received responses from `r number_of_responses` people. 
+We did a **survey** on `r today_pretty`. We received responses from `r number_of_responses` people. 
 
 
 
