@@ -5,26 +5,36 @@ library(rmarkdown)
 library(pagedown)
 library(fs)
 
-# Render report -----------------------------------------------------
 
-render(input = "report.Rmd", 
-       output_dir = here::here("reports"),
-       output_file = paste0("report-", now(), ".html"),
-       clean = TRUE)
+# Group name --------------------------------------------------------------
 
-# file_delete(here::here("report.html"))
+# Add group name here. It will be used below for names of things. 
+
+group_name <- "ncen"
 
 # Render slides -----------------------------------------------------
 
 render(input = here::here("slides", "slides.Rmd"), 
        output_dir = here::here("slides"),
-       output_file = "slides-iea.html",
+       output_file = str_glue("slides-{group_name}.html"),
        clean = TRUE)
 
 # file_delete(here::here("slides", "slides.html"))
 
-# Convert to PDF ----------------------------------------------------------
 
-chrome_print(here::here("slides", "slides-iea.html"), 
-             here::here("slides", "slides-iea.pdf"))
+# Convert slides to PDF ----------------------------------------------------------
+
+# chrome_print(str_glue("slides/slides-{group_name}.html"), 
+#              str_glue("slides/slides-{group_name}.pdf"),
+#              timeout = 180)
+
+# Render report -----------------------------------------------------
+
+render(input = "report.Rmd", 
+       output_dir = here::here("reports"),
+       output_file = str_glue("report-{group_name}.html"),
+       clean = TRUE)
+
+# file_delete(here::here("report.html"))
+
 
