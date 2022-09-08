@@ -10,7 +10,7 @@ library(fs)
 
 # Add group name here. It will be used below for names of things. 
 
-group_name <- "ncen"
+group_name <- "rin3-fall-2022"
 
 # Render slides -----------------------------------------------------
 

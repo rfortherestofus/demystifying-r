@@ -29,6 +29,8 @@ library(gendercoder)
 library(tidygeocoder)
 library(leaflet)
 library(scales)
+
+gs4_auth("david@rfortherestofus.com")
 ```
 
 
@@ -88,6 +90,8 @@ We did a **survey** on `r today_pretty`. We received responses from `r number_of
 ## Age
 
 ```{r}
+# This is a comment
+
 mean_age <- survey_responses_today %>% 
   summarize(mean_age = mean(how_old_are_you, na.rm = TRUE)) %>% 
   mutate(mean_age = round_half_up(mean_age, 1)) %>% 

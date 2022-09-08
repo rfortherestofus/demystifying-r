@@ -1,6 +1,6 @@
 ---
 title: "Demystifying R: <br>A Guided Tour"
-author: "David Keyes <br> R for the Rest of Us"
+author: "David Keyes and Charlie Hadley<br> R for the Rest of Us"
 output:
   xaringan::moon_reader:
     df_print: kable
@@ -48,7 +48,7 @@ Please take the survey at https://rfortherestofus.com/survey/
 
 # Logistics
 
-Video recording, slides, and report will be posted on the North Carolina Evaluation Network website
+Video recording, slides, and report will be posted at https://rfortherestofus.com/demystifying/
 
 --
 
@@ -64,7 +64,7 @@ There will also be time for Q&A at the end
 
 class: inverse, center, middle 
 
-# Who Am I?
+# Who Are We?
 
 ???
 
