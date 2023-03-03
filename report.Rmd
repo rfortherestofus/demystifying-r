@@ -60,7 +60,6 @@ survey_responses_today <- read_sheet("https://docs.google.com/spreadsheets/d/1lT
   mutate(timestamp = as.Date(timestamp)) %>% 
   # Filter to only keep responses from today
   filter(timestamp == as_date(now()))
-  
 ```
 
 # About our Respondents

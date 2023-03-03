@@ -1,6 +1,6 @@
 ---
 title: "Demystifying R: <br>A Guided Tour"
-author: "David Keyes and Charlie Hadley<br> R for the Rest of Us"
+author: "David Keyes"
 output:
   xaringan::moon_reader:
     df_print: kable
@@ -64,7 +64,7 @@ There will also be time for Q&A at the end
 
 class: inverse, center, middle 
 
-# Who Are We?
+# Who Am I?
 
 ???
 
@@ -88,9 +88,9 @@ Was all command line before, but with RStudio, tidyverse, etc it's much easier t
 
 ### Download and Install R
 
-The first thing you need to do is download the R software. Go to the [Comprehensive R Archive Network (aka “CRAN”) website](https://cran.cnr.berkeley.edu/) and download the software for your operating system (Windows, Mac, or Linux).
+The first thing you need to do is download the R software. You can download R at the [Posit website](https://posit.co/download/rstudio-desktop/).
 
-![](images/download-r.png)
+![](images/download-rstudio.png)
 
 ---
 
@@ -115,7 +115,7 @@ The first thing you need to do is download the R software. Go to the [Comprehens
 
 ### Download and Install RStudio
 
-Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstudio/download/). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
+Download RStudio at the [Posit website](https://posit.co/download/rstudio-desktop/). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
 
 ![](images/download-rstudio.png)
 
@@ -238,6 +238,7 @@ class: center, middle
 class: center, middle
 
 ![](images/psc-sample.png)
+
 ---
 
 class: center, middle
